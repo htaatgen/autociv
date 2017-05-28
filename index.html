@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>World</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="library.js" type="application/javascript"></script>
+    <script src="names.js" type="application/javascript"></script>
+    <script src="graphics.js" type="application/javascript"></script>
+    <script src="map.js" type="application/javascript"></script>
+    <script src="processTurn.js" type="application/javascript"></script>
+    <script src="main.js" type="application/javascript"></script>
+</head>
+<body>
+<style>
+    canvas {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        display: inline-block;
+    }
+
+    #top{
+        height:100px;
+    }
+
+    #left, #right {
+        width:100px;
+        position: absolute;
+        display: inline-block;
+    }
+    #left{
+
+    }
+    #right{
+        left:1300px;
+    }
+
+    #bottom {
+        top: 800px;
+        position: absolute;
+    }
+</style>
+<div id="top">top</div>
+<div id="left">
+    <input type="button" value="Process turn" id="processTurn">
+<a id="turnSpan">1</a>
+</div>
+<canvas id="canvas" width="1200" height="700"></canvas>
+<div id="right">right</div>
+<div id="bottom">
+    <div class="infoScreen" id="tileScreen">
+        X: <a id="tileScreenX"></a><br>
+        Y: <a id="tileScreenY"></a><br>
+        Name: <a id="tileScreenName"></a><br>
+        Terrain: <a id="tileScreenTerrain"></a><br>
+        Climate: <a id="tileScreenClimate"></a><br>
+        Growth score: <a id="tileScreenGrowth"></a><br>
+        Economic score: <a id="tileScreenEconomic"></a><br>
+        Features: <a id="tileScreenFeatures"></a><br>
+        Resource: <a id="tileScreenResources"></a><br>
+        People: <a id="tileScreenPeople"></a><br>
+        Settlements: <a id="tileScreenSettlements"></a><br>
+        Controlled by: <a id="tileScreenDominant"></a><br>
+    </div>
+</div>
+
+</body>
+</html>
