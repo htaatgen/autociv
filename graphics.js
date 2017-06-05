@@ -16,15 +16,17 @@ var grass = new Image();
 grass.src = "Graphics/grass.png";
 grass.alt = "grasslands";
 
-var water = new Image();
-water.src = "Graphics/water.png";
-water.alt = "water";
+var water1 = new Image();
+water1.src = "Graphics/water1.png";
+water1.alt = "water";
 
-var ocean = new Image();
-ocean.src = "Graphics/ocean.png";
+var water2 = new Image();
+water2.src = "Graphics/water2.png";
+water2.alt = "water";
 
-var sea = new Image();
-sea.src = "Graphics/sea.png";
+var water3 = new Image();
+water3.src = "Graphics/water3.png";
+water3.alt = "water";
 
 var snow = new Image();
 snow.src = "Graphics/snow.png";

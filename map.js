@@ -52,7 +52,11 @@ function addDetail(map) {
 
             //Add basetype based on height
             if (tile.h < 0) {
-                tile.basetype = water;
+                switch(Math.floor(Math.random()*3)+1) {
+                    case 1: tile.basetype = water1; break;
+                    case 2: tile.basetype = water2; break;
+                    case 3: tile.basetype = water3; break;
+                }
             }
             else {
 
@@ -79,7 +83,9 @@ function addDetail(map) {
             coasts += (x == 0) ? '' : (map[x - 1][y].h < 0) ? 'w' : '';
 
             if (coasts.length > 0 &&  tile.basetype.alt != "water") {
-                tile.coasts = "Graphics/Borders_water/" + coasts +".png";
+                var variation = Math.floor(Math.random()*2)+1;
+                tile.coasts = new Image();
+                tile.coasts.src = "Graphics/Borders_water/" + coasts + variation+".png";
             }
             else {
                 tile.coasts = 'None';
@@ -91,7 +97,7 @@ function addDetail(map) {
             //Generate features: forests. If another forest is adjacent, chance for forest rises.
             var fnorth = (x == 0) ? 0 : (map[x - 1][y].features.indexOf('forest') != -1) ? 1 : 0;
             var feast = (y == 0) ? 0 : (map[x][y - 1].features.indexOf('forest') != -1) ? 1 : 0;
-            if (((fnorth) + (feast) + 3 * Math.random()) / 5 > 0.5 && tile.basetype != water) {
+            if (((fnorth) + (feast) + 3 * Math.random()) / 5 > 0.5 && tile.basetype.alt != "water") {
                 tile.features.push('forest');
             }
 

@@ -32,9 +32,9 @@ function drawTerrain(canvas) {
 
             //Draw coasts
             if (tile.coasts != 'None') {
-                var coasts = new Image();
-                coasts.src = tile.coasts;
-                canvas.drawImage(coasts, tile.x, tile.y);
+                //var coasts = new Image();
+                //coasts.src = tile.coasts;
+                canvas.drawImage(tile.coasts, tile.x, tile.y);
             }
 
             //Draw settlements
