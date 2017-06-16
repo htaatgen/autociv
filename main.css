@@ -1,0 +1,121 @@
+body {
+    font-family: "Garamond", Garamond, sans-serif;
+    background-color: black;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+button {
+    background-color:black;
+    border:none;
+    border-left: 1px solid saddlebrown;
+    border-right: 1px solid saddlebrown;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height:100%
+}
+
+.title {
+    font-family: "Trajan Pro", "Times New Roman", SansSerif, sans-serif;
+}
+
+.loading {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    background-color: navajowhite;
+    color: saddlebrown;
+}
+
+.infopanel {
+    position: absolute;
+    background: navajowhite;
+    border: 1px solid sandybrown;
+    color: saddlebrown;
+    padding:3px;
+    height: 20em;
+    width:20em;
+}
+
+.bottom {
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    color: navajowhite;
+    padding: 2px;
+}
+
+.bottom-bar {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.strong {
+    font-weight: 700;
+}
+
+.small {
+    font-size: x-small;
+}
+
+.right {
+    float:right;
+}
+
+.bottom-title {
+    font-size: xx-large;
+    left: 2%;
+    width: 7em;
+}
+
+.bottom-control {
+}
+
+.bottom-personal {
+    float: right;
+}
+
+.tileClose {
+    float:right;
+    font-size: large;
+}
+
+.tileHeader {
+    position: relative;
+    width: 100%;
+    height: 1.3em;
+}
+
+.tileNav {
+    border: 1px solid sandybrown;
+    padding:2px;
+}
+
+.navLink {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.navLink:hover {
+    color: sandybrown;
+}
+
+.navLink:active {
+    color: black;
+}

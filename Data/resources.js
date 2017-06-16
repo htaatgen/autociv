@@ -2,9 +2,6 @@
  * Created by Salami on 19-2-2017.
  */
 
-//Creates a lookup library
-var lib = {};
-
 //Resources
 lib.resources={};
 
@@ -93,33 +90,5 @@ lib.resources.wood={
     desc: "Fast building material",
     growth: 0,
     economic:4
-};
-
-//Basetypes
-
-lib.basetypes ={};
-lib.basetypes.water={
-    name: "Water",
-    desc: "Wet and fishy",
-    growth: 0,
-    economic:0
-};
-lib.basetypes.grasslands={
-    name: "Grasslands",
-    desc: "Fertile green fields",
-    growth: 11,
-    economic:11
-};
-lib.basetypes.hills={
-    name: "Hills",
-    desc: "Rolling hills",
-    growth: 9,
-    economic:11
-};
-lib.basetypes.mountains={
-    name: "Mountains",
-    desc: "Imposing ridges and peaks",
-    growth: 6,
-    economic:3
 };
 

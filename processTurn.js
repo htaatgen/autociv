@@ -7,18 +7,17 @@ function updateTiles() {
         for (var y = 0; y < map[0].length; y++) {
             var tile = map[x][y];
 
-            //Determine growth and economic
-            tile.growthScore = 0;
-            tile.economicScore = 0;
+            tile.growthScore =0;
+            tile.economicScore =0;
 
-            //Determine terrain bonus
-             tile.growthScore += lib.basetypes[tile.basetype.alt].growth
-             tile.economicScore += lib.basetypes[tile.basetype.alt].economic
+            // Determine terrain bonus
+            tile.growthScore = lib.basetypes[tile.basetype.alt].growth;
+            tile.economicScore = lib.basetypes[tile.basetype.alt].economic;
 
-            if (tile.coasts != 'None') {
-                 tile.growthScore += 2;
-                 tile.economicScore += 4;
-            }
+            $.each(tile.features, function (key, feature) {
+                tile.growthScore += lib.features[key].growth;
+                tile.economicScore += lib.features[key].economic;
+            });
 
             //Determine resources bonus
             $.each(tile.resources, function (key, resource) {

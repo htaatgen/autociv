@@ -3,77 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>World</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <!--jQuery and jQuery UI -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="library.js" type="application/javascript"></script>
-    <script src="names.js" type="application/javascript"></script>
-    <script src="graphics.js" type="application/javascript"></script>
-    <script src="techs.js" type="application/javascript"></script>
-    <script src="map.js" type="application/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+    <!-- Set up the data library, graphics, names etc.-->
+    <script src="Data/lib.js" type="application/javascript"></script>
+    <script src="Data/features.js" type="application/javascript"></script>
+    <script src="Data/resources.js" type="application/javascript"></script>
+    <script src="Data/terrain.js" type="application/javascript"></script>
+    <script src="Data/names.js" type="application/javascript"></script>
+    <script src="Data/graphics.js" type="application/javascript"></script>
+    <script src="Data/techs.js" type="application/javascript"></script>
+    <script src="Data/traits.js" type="application/javascript"></script>
+
+    <!--Game logic-->
+    <script src="renderMap.js" type="application/javascript"></script>
+    <script src="generateMap.js" type="application/javascript"></script>
     <script src="processTurn.js" type="application/javascript"></script>
+
+    <!--Initialize and run interactive control-->
     <script src="main.js" type="application/javascript"></script>
+
 </head>
 <body>
-<style>
-    canvas {
-        position: absolute;
-        left: 100px;
-        top: 100px;
-        display: inline-block;
-    }
-
-    #top{
-        height:100px;
-    }
-
-    #left, #right {
-        width:100px;
-        position: absolute;
-        display: inline-block;
-    }
-    #left{
-
-    }
-    #right{
-        left:1300px;
-    }
-
-    #bottom {
-        top: 800px;
-        position: absolute;
-    }
-</style>
-<div id="top">top</div>
-<div id="left">
-    <input type="button" value="Process turn" id="processTurn">
-<a id="turnSpan">1</a>
-</div>
-<canvas id="canvas" width="1200" height="700"></canvas>
-<div id="right">
-    <div class="infopanel">
-        <div class="nav">
-        </div>
-        <div class=""></div>
+<canvas id="canvas"></canvas>
+<div class="infopanel" id="infopanel_tile">
+    <div class="tileHeader title strong">
+        <a id="tileTitle"></a>
+        <a class="tileClose right navLink">X</a>
     </div>
-
-
-
-</div>
-<div id="bottom">
-    <div class="infoScreen" id="tileScreen">
-        X: <a id="tileScreenX"></a><br>
-        Y: <a id="tileScreenY"></a><br>
-        Name: <a id="tileScreenName"></a><br>
-        Terrain: <a id="tileScreenTerrain"></a><br>
-        Climate: <a id="tileScreenClimate"></a><br>
-        Growth score: <a id="tileScreenGrowth"></a><br>
-        Economic score: <a id="tileScreenEconomic"></a><br>
-        Features: <a id="tileScreenFeatures"></a><br>
-        Resource: <a id="tileScreenResources"></a><br>
-        People: <a id="tileScreenPeople"></a><br>
-        Settlements: <a id="tileScreenSettlements"></a><br>
-        Controlled by: <a id="tileScreenDominant"></a><br>
+    <div class="tileNav title">
+        <span class="navLink small" data-nav="tileMain">Main</span>
+        <span class="navLink small" data-nav="tileTerrain">Terrain</span>
+        <span class="tileStats right"></span>
+    </div>
+    <div class="tilePanel" id="tileMain">
+    </div>
+    <div class="tilePanel" id="tileEcon">
+    </div>
+    <div class="tilePanel" id="tileCiv">
+    </div>
+    <div class="tilePanel" id="tileTerrain">
     </div>
 </div>
-
+<div class="bottom">
+    <div class="bottom-bar bottom-title title">
+        <span class="strong">WS</span>Game
+    </div>
+    <div class="bottom-bar bottom-control">
+        <button id="processTurn">NEXT TURN</button>
+        <button class="toggleTile" data-nav="#infopanel_tile">Tile</button>
+        <button class="toggleTile" data-nav="#infopanel_player">Player</button>
+        <button class="toggleTile" data-nav="#infopanel_world">World</button>
+    </div>
+    <div class="bottom-bar bottom-personal">
+        <span class="small">
+        Version 0.1.0<br>
+        github.com/htaatgen/ws-game
+        </span>
+    </div>
+</div>
+<div class="loading title">
+        <span><span class="strong">WS</span>Game</span>
+        <br>Loading data...
+</div>
 </body>
 </html>
